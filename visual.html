@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades de CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style_2.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-code"></i>Guía de Propiedades de CSS</h1>
+            <p>Explicaciones detalladas y ejemplos prácticos de las propiedades</p>
+        </header>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#display" class="active">Display & Position</a></li>
+                <li><a href="#boxmodel">Box Model</a></li>
+                <li><a href="#flexbox">Flexbox</a></li>
+                <li><a href="#grid">CSS Grid</a></li>
+                <li><a href="#transform">Transform</a></li>
+                <li><a href="#animation">Animaciones</a></li>
+            </ul>
+        </nav>
+
+        <main class="properties-container">
+            <!--Propiedad Display-->
+            <div class="property-card" id="display">
+                <div class="property-header">
+                    <h2><i class="fas fa-square"></i>Propiedad Display</h2>
+                </div>
+                <div class="property-body">
+                    <div class="property-section">
+                        <h3><i class="fas fa-info-circle"></i>Descripción</h3>
+                        <p>La propiedad <strong>Display</strong> especifica el tipo de cuadro de representación utilizado para un elemento. Es una de las propiedades de CSS más importantes para el control del diseño.</p>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-cog"></i>Valores Comúnes</h3>
+                        <ul class="attributes-list">
+                            <li><strong>block</strong>: El elemento genera un cuadro de bloque, ocupando todo el ancho disponible</li>
+                            <li><strong>inline</strong>: El elemento genera uno o más cuadros en línea que no generan saltos de línea</li>
+                            <li><strong>inline-block</strong>: Similar a inline pero permite establecer width y height</li>
+                            <li><strong>flex</strong>: Establece un contenedor flexible</li>
+                            <li><strong>grid</strong>: Establece un contenedor de cuadrícula</li>
+                            <li><strong>none</strong>: Oculta completamente el elemento</li>
+                        </ul>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-code"></i>Ejemplo de Código</h3>
+                        <div class="code-example">
+                            <pre><code>.elemento {
+    display: block;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.oculto {
+    display: none;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-eye"></i>Resultado Visual</h3>
+                        <div class="visual-example">
+                            <h4>Elementos con display: block (por defecto para div, p, h1...)</h4>
+                            <div style="background-color: #4361ee; color: white; padding: 10px; margin-bottom: 10px;">Bloque 1</div>
+                            <div style="background-color: #4895ef; color: white; padding: 10px; margin-bottom: 10px;">Bloque 2</div>
+
+                            <h4>Elementos con display: inline (por defecto para span, a...)</h4>
+                            <p>Este es un <span style="background-color: #4cc9f0; color: white; padding: 2px 5px;">texto en línea</span> dentro de un párrafo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Propiedad Position-->
+            <div class="property-card" id="position">
+                <div class="property-header">
+                    <h2><i class="fas fa-arrows-alt"></i>Propiedades Position</h2>
+                </div>
+                <div class="property-body">
+                    <div class="property-section">
+                        <h3><i class="fas fa-info-circle"></i>Descripción</h3>
+                        <p>La propiedad <strong>position</strong> especifica el tipo de método de posicionamiento utilizado para un elemento. Los elementos posicionados se colocan usando las propiedades top, bottom, left y right.</p>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-cog"></i>Valores Comúnes</h3>
+                        <ul class="attributes-list">
+                            <li><strong>static</strong>: Valor por defecto, Sigue el flujo normal del documento</li>
+                            <li><strong>relative</strong>: Se posiciona relativo a su posición normal</li>
+                            <li><strong>absolute</strong>: Se posiciona relativo al ancestro posicionado más cercano</li>
+                            <li><strong>fixed</strong>: Se posiciona relativo a la ventana del navegador</li>
+                            <li><strong>sticky</strong>: Alterna entre relative y fixed según el desplazamiento</li>
+                        </ul>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-code"></i>Ejemplo de código</h3>
+                        <div class="code-example">
+                            <pre><code>.relativo {
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+.fijo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.absoluto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-eye"></i>Resultado Visual</h3>
+                        <div class="visual-example">
+                            <h4>Elemento con position: relative</h4>
+                            <div style="position: relative; top: 0; left: 30px; background-color: #4895ef; color: white; padding: 10px; width: fit-content;">
+                                Este div esta desplazado 30px desde la izquierda
+                            </div>
+
+                            <h4>Elemento con position: absolute (dentro del contenedor relativo)</h4>
+                            <div class="example-position">
+                                Contenedor con position: relative
+                                <div class="positioned-item">Elemento Absoluto</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Box Model-->
+            <div class="property-card" id="boxmodel">
+                <div class="property-header">
+                    <h2><i class="fas fa-square-full"></i>Box Model</h2>
+                </div>
+                <div class="property-body">
+                    <div class="property-section">
+                        <h3><i class="fas fa-info-circle"></i>Descripción</h3>
+                        <p>El <strong>Box Model</strong> (modelo de caja) es fundamental en CSS. Cada elemento es representado como una caja rectangular que consta de: contenido, padding, border y margin.</p>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-cog"></i>Propiedades</h3>
+                        <ul class="attributes-list">
+                            <li><strong>width</strong>: Ancho del Contenido</li>
+                            <li><strong>height</strong>: Alto del Contenido</li>
+                            <li><strong>padding</strong>: Espacio entre el contenido y el borde</li>
+                            <li><strong>border</strong>: Borde alrededor del padding y el contenido</li>
+                            <li><strong>margin</strong>: Espacio exterior, fuera del borde</li>
+                            <li><strong>box-sizing</strong>: Cambia como se calculan width y height</li>
+                        </ul>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-code"></i>Ejemplo de código</h3>
+                        <div class="code-example">
+                            <pre><code>.caja {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid #4361ee;
+    margin: 30px;
+}
+
+/*Border-box incluye padding y border en el width/height*/
+.caja-inteligente {
+    box-sizing: Border-box;
+    width: 200px;
+    padding: 20px;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-eye"></i>Resultado visual</h3>
+                        <div class="visual-example">
+                            <h4>Box Model tradicional (content-box)</h4>
+                            <div style="box-sizing: content-box; width: 200px; height: 80px; padding: 20px; border: 5px solid #4361ee; margin-bottom: 20px; background-color: white;">
+                                Ancho total: 200 + 40 + 10 = 250px
+                            </div>
+
+                            <h4>Box Model con box-sizing: Border-box</h4>
+                            <div style="box-sizing: border-box; width: 250px; height: 125px; padding: 20px; border: 5px solid #f72585; background-color: white;">
+                                Ancho total: 200px (incluye padding y border)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Flexbox-->
+            <div class="property-card" id="flexbox">
+                <div class="property-header">
+                    <h2><i class="fas fa-th"></i>Flexbox</h2>
+                </div>
+                <div class="property-body">
+                    <div class="property-section">
+                        <h3><i class="fas fa-info-circle"></i>Descripción</h3>
+                        <p><strong>Flexbox</strong> es un modelo de un layout unidimensional para distribuir el espacio entre elementos y alinearlos de manera eficiente.</p>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-cog"></i>Propiedades principales</h3>
+                        <ul class="attributes-list">
+                            <li><strong>flex-direction</strong>: Establece la dirección principal (row, column)</li>
+                            <li><strong>justify-content</strong>: Alineación a lo largo del eje principal</li>
+                            <li><strong>align-items</strong>: Alineación a lo largo del eje transversal</li>
+                            <li><strong>flex-wrap</strong>: Controla si los elementos se envuelven en múltiples líneas</li>
+                            <li><strong>gap</strong>: Define el espacio entre elementos flexibles</li>
+                        </ul>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-code"></i>Ejemplo de código</h3>
+                        <div class="code-example">
+                            <pre><code>.contenedor-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.elemento-flex {
+    flex: 1; /* Ocupación de espacio disponible */
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-eye"></i>Resultado visual</h3>
+                        <div class="visual-example">
+                            <h4>Contenedor Flex con justify-content: space-between</h4>
+                            <div style="display: flex; justify-content: space-between; background-color: #f8f9fa; padding: 10px;">
+                                <div style="background-color: #4361ee; color: white; padding: 10px;">Item 1</div>
+                                <div style="background-color: #4895ef; color: white; padding: 10px;">Item 2</div>
+                                <div style="background-color: #4cc9f0; color: white; padding: 10px;">Item 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CSS Grid-->
+            <div class="property-card" id="grid">
+                <div class="property-header">
+                    <h2><i class="fas fa-th-large"></i>CSS Grid</h2>
+                </div>
+                <div class="property-body">
+                    <div class="property-section">
+                        <h3><i class="fas fa-info-circle"></i>Descripción</h3>
+                        <p><strong>CSS Grid Layout</strong> es un sistema de diseño bidimensional basado en cuadrículas para crear interfaces complejas.</p>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-code"></i>Ejemplo de código</h3>
+                        <div class="code-example">
+                            <pre><code>.contenedor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.cabecera {
+    grid-column: 1 / 4; /*Ocupa desde la linea 1 a la 4*/
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-eye"></i>Resultado Visual</h3>
+                        <div class="visual-example">
+                            <h4>Grid de 4 columnas y 2 filas</h4>
+                            <div class="example-grid">
+                                <div class="grid-item">1</div>
+                                <div class="grid-item">2</div>
+                                <div class="grid-item">3</div>
+                                <div class="grid-item">4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Transform-->
+            <div class="property-card" id="transform">
+                <div class="property-header">
+                    <h2><i class="fas fa-sync-alt"></i>Transform</h2>
+                </div>
+                <div class="property-body">
+                    <div class="property-section">
+                        <h3><i class="fas fa-info-circle"></i>Descripción</h3>
+                        <p>La propiedad <strong>transform</strong> permite modificar el espacio de coordenadas del modelo de formato CSS (rotar, escalar, mover o inclinar elementos).</p>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-code"></i>Ejemplo de código</h3>
+                        <div class="code-example">
+                            <pre><code>.rotar {
+    transform: rotate(45deg);
+}
+
+.escalar {
+    transform: scale(1.2);
+}
+
+.mover {
+    transform: translate(50px, 20px);
+}
+
+.combinar {
+    transform: rotate(15deg) scale(1.1);
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-eye"></i>Resultado Visual</h3>
+                        <div class="visual-example">
+                            <h4>Transform: rotate(10deg) y scale(1.05) al pasar el cursor</h4>
+                            <div class="example-transform">Pasa el cursor por aquí</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Animaciones-->
+            <div class="property-card" id="animation">
+                <div class="property-header">
+                    <h2><i class="fas fa-film"></i>Animaciones</h2>
+                </div>
+                <div class="property-body">
+                    <div class="property-section">
+                        <h3><i class="fas fa-info-circle"></i>Descripción</h3>
+                        <p>Las <strong>Animaciones en CSS</strong> permiten crear transiciones y animaciones complejas sin necesidad de JavaScript. Se definen mediante keyframes que especifican los estados.</p>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-cog"></i>Propiedades Principales</h3>
+                        <ul class="attributes-list">
+                            <li><strong>animation-name</strong>: Nombre de la animación (@keyframes)</li>
+                            <li><strong>animation-duration</strong>: Duración de la animación</li>
+                            <li><strong>animation-timing-function</strong>: Función de temporización</li>
+                            <li><strong>animation-delay</strong>: Retraso antes de comenzar</li>
+                            <li><strong>animation-iteration-count</strong>: Número de repeticiones</li>
+                            <li><strong>animation-direction</strong>: Dirección de la animación</li>
+                        </ul>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-code"></i>Ejemplo de código</h3>
+                        <div class="code-example">
+                            <pre><code>@keyframes ejemplo {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/*Aplicar la animación */
+.elemento {
+    animation-name: ejemplo;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/*Forma abreviada*/
+.elemento-corto {
+    animation: ejemplo 2s ease-in-out infinite;
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="property-section">
+                        <h3><i class="fas fa-eye"></i>Resultado Visual</h3>
+                        <div class="visual-example">
+                            <h4>Animación de Pulsación (pulse)</h4>
+                            <div class="example-animation"></div>
+
+                            <h4>Animación de Cambio de Color</h4>
+                            <div style="width: 100px; height: 100px; background-color: #4361ee; animation: color-change 3s infinite; border-radius: 8px;"></div>
+                        </div>
+                    </div>
+
+                    <style>
+                        @keyframes color-change {
+                            0% {background-color: #4361ee;}
+                            50% {background-color: #f72585;}
+                            100% {background-color: #4361ee;}
+                        }
+                    </style>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Guía de Propiedades de CSS</p>
+            <p>Recurso adaptado con el fin de comprender y analizar las propiedades principales de CSS.</p>
+        </footer>
+    </div>
+</body>
+</html>
