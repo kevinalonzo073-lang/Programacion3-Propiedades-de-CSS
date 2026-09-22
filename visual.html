@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propiedades de CSS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="CSS/style_2.css">
+    <link rel="stylesheet" href="style_2.css">
 </head>
 <body>
     <div class="container">
@@ -398,9 +398,9 @@
 
                     <style>
                         @keyframes color-change {
-                            0% {background-color: #4361ee;}
-                            50% {background-color: #f72585;}
-                            100% {background-color: #4361ee;}
+                            0% {background-color: #43ee4c;}
+                            50% {background-color: #045bfc;}
+                            100% {background-color: #f30404;}
                         }
                     </style>
                 </div>
@@ -412,5 +412,30 @@
             <p>Recurso adaptado con el fin de comprender y analizar las propiedades principales de CSS.</p>
         </footer>
     </div>
-</body>
+    <script>
+        //Navegacion suave
+        document.querySelectorAll('nav a').forEach(anchor => {
+anchor.addEventListener('click',function(e){
+    e.preventDefault();
+
+    //Remover las clases activas de todos los enlaces
+    document.querySelectorAll('nav a').forEach(a =>{
+        a.classList.remove('active');
+    });
+
+    //Añadir clase activa al enlace seleccionado
+    this.classList.add('active');
+
+    //Desplazamiento suave
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    window.scrollTo({
+        top: targetElement.offsetTop - 80,
+        behavior: 'smooth'
+    });
+});
+
+        });
+
+        </body>
 </html>
