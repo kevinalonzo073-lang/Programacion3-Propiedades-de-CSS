@@ -46,3 +46,253 @@ header {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
+/*Estilos para las tarjetas que muestran cada propeidad (Container)*/
+.properties-container {
+display: grid;/*Usa CSS grid para diseño de cuadricula*/
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+gap: 2rem; /*Espacio entre las tarjetas*/
+margin-bottom: 3rem;/*Espaciado inferior*/
+}
+/*Tarjeta Individual*/
+.property-card{
+background-color: white;/*Fondo Blanco*/
+border-radius: var(--border-radius);
+box-shadow: var(--box-shadow);
+overflow:  hidden;/*Ocultar cualquier contenido que sobresalga*/
+transition: var(--transition);
+}
+/*Efectos de la tarjeta al pasar el mouse*/
+.property-card:hover{
+
+transform: translateY(-5px);/*Desliza la tarjeta 5px hacia arriba*/
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);/*Sombra mas pronunciada*/
+}
+/*Encabezado de la tarjeta*/
+.property-header{
+background-color: var(--primary-color);
+color: white;
+padding: 1rem;/*Espaciado Interno*/
+}
+/*Titulo en el encabezado de la tarjeta*/
+.property-header h2{
+font-size: 1.5rem;
+margin: 0;
+}
+
+/*Cuerpo de la tarjeta*/
+.property-body {
+padding:  1.5rem;
+}
+/*Seccion dentro de la tarjeta */
+.property-section{
+margin-bottom: 1.5rem; /*Espaciado Inferior entre secciones*/
+}
+/*Titulo de la seccion*/
+.property-section h3 {
+    color:  var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items:  center;
+    gap: 8px;
+}
+/*Icono en el titulo de la seccion*/
+.property-section h3 i {
+font-size: 1rem;/*Tamaño del  Icono*/
+
+}
+
+/*Lista de atributos*/
+.attributes-list{
+list-style-type:none;/*Elimina las viñetas*/
+padding-left: 1rem; /*Espaciado Izquierdo*/
+}
+
+/*Elementos de la lista*/
+.attributes-list li {
+margin-bottom:  0.5rem;
+position: relative;
+padding-left:  20px;
+}
+
+/*Marcador personalizado para los elementos de la lista*/
+.attributes-list li:before{
+content: "•"; /*Usa un punto como marcador*/
+color: var(--accent-color);
+position:  absolute; /*posicionamiento absoluto respecto al Li*/
+left: 0; /*Alineado completamente a la izquierda*/
+font-size: 1.2rem;
+
+
+}
+pre{
+background-color:  #2b2b2b;
+color: #f8f8f2;
+padding:  1rem;
+border-radius:  var(--border-radius);
+overflow: auto;/*Permite desplazamiento horizontal si el codigo es largo*/
+font-size: 0.9rem;
+line-height: 1.4;/*Altura de la linea para mejor legibilidad*/
+
+}
+/*Contedor de ejemplo*/
+.code-example{
+margin: 1rem 0;/*Margen Vertical*/
+
+}
+/*Ejemplo visual*/
+.visual-example{
+background-color:  var(--light-color);
+border-left:  4px solid var(--accent-color);/*Borde izquierdo acentuado*/
+padding:  1rem;
+border-radius:  0 var(--border-radius) var(--border-radius) 0;/*Border redondeados solo a la derecha*/
+
+
+}
+
+/*Titulo en ejemplo visual*/
+.visual-example h4{
+margin-bottom:  0,5rem;
+color: var(--secondary-color);
+
+}
+
+/*Pie de pagina*/
+footer {
+text-align:  center;
+padding:  2rem;
+background-color:  var(--dark-color);
+color:  white;
+border-radius:  var(--border-radius);
+margin-top: 2rem;
+}
+
+/*Diseño responsive
+Meida Query para adaptar estilos en dispositgivos mas pequeños
+*/
+@media (max-width: 768px){
+/*Camvia a una sola columna en dispositivos moviles*/
+.properties-container{
+    grid-template-columns: 1fr;
+}
+
+/*cambia la navegacion a columna*/
+.nav-links {
+flex-direction:  column;
+align-items:  center;
+}
+/*Ajuste de margenes en elementos de lista*/
+.nav-links li {
+margin: 5px 0;
+}
+}
+/*Ejemplos especificos para estilos con display flex*/
+
+.example-flex{
+display:  flex; /*Activa el flexbox*/
+gap: 10px;
+margin: 15px 0;
+padding: 15px;
+background-color:  #e9ecef;
+border-radius:  var(--border-radius);
+}
+
+/*Elementos dentro del contenedor*/
+.flex-item{
+padding: 15px;
+background-color: var(--accent-color);
+color:  white;
+border-radius:  4px;
+}
+
+/*Ejemplo de grid*/
+.example-grid {
+display: grid;
+grid-template-columns:  repeat(3, 1fr);/*3 columnas de igual tamaño*/
+gap:  10px; /*Espaciado entre celdas*/
+margin:  15px 0;
+}
+
+/*Elementos dentro del grid*/
+.grid-item{
+padding:  15px;
+background-color:  var(--success-color);
+color:  white;
+text-align: center;
+border-radius:  4px;
+
+}
+
+/*Ejemplo de posicion*/
+.example-position {
+position:  relative;/*Contexto de posicionamiento*/
+height:  150px;/*Altura fija*/
+background-color: #e9ecef;
+border-radius: var(--border-radius);
+margin:  15px 0; /*Marca vertical*/
+
+}
+/*Elementos con posicion absoluta*/
+.positioned-item{
+position:  absolute; /*Posicionamiento absoluto rescpeto del contenedor relativo*/
+bottom:  15px;/*15px desde el fondo */
+right: 15px;/*15px desde la derecha*/
+padding: 10px;
+background-color: var(--warning-color);
+color: white;
+border-radius: 4px;
+
+
+}
+
+/*Ejemplo de animacion*/
+.example-animation{
+width: 50px;
+height: 50px;
+background-color: var(--primary-color);
+border-radius: 50%;/*Una forma circular*/
+margin: 15px 0;
+
+/*Animacion pulse de 2 seg*/
+animation: pulse 2s infinite;
+}
+
+/*Definicion de la animacion pulse*/
+@keyframes pulse {
+0% {
+transform: scale(0.95);/*Escala inicial*/
+box-shadow: 0 0 0 10px rgba(67, 97, 238, 0.7); /*Sombreado Inicial*/
+}
+
+70% {
+transform: scale(1);/*Escala media*/
+box-shadow: 0 0 0 10px rgba(67, 97, 238, 0); /*Sombreado que se expande*/
+
+}
+
+100% {
+transform: scale(0.95);/*Escala inicial*/
+box-shadow: 0 0 0 10px rgba(67, 97, 238, 0); /*Sombra desaparece*/
+
+}
+}
+/*Ejemplo de transformacion*/
+.example-transform {
+width: 80px;
+height: 80px;
+background-color:  var(--accent-color);
+margin: 20px 0;
+display:  flex;
+align-items:center;
+justify-content:  center;
+color:  white;
+border-radius:  8px;
+
+transform:  perspective(500px) rotatex(10deg) rotateY(15deg);
+transition: transform 0.5s;
+
+}
+.example-transform:hover{
+transform: perspective(500px) rotateX(0deg) rotateY(0deg);
+
+}
